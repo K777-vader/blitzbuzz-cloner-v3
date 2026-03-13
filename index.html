@@ -1,0 +1,52 @@
+<?php
+/**
+ * Plugin Name: BlitzBuzz Nexus V3 - Monetized
+ * Description: AI UI Cloner with integrated AdSense slots for revenue generation.
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+function bz_monetized_nexus_shortcode() {
+    ob_start();
+    ?>
+    <div id="bz-nexus-root">
+        <style>
+            #bz-nexus-root { font-family: 'Inter', sans-serif; background: #0a0a0a; padding: 20px; border-radius: 20px; }
+            .ad-slot { 
+                background: #111; 
+                border: 1px solid #222; 
+                margin: 15px 0; 
+                display: flex; 
+                justify-content: center; 
+                align-items: center;
+                min-height: 90px;
+                color: #444;
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+            .nexus-main { border: 1px solid #63e28c; padding: 25px; border-radius: 15px; }
+        </style>
+
+        <div class="ad-slot">
+            ADVERTISEMENT
+        </div>
+
+        <div class="nexus-main">
+            <h2 style="color:#63e28c; margin-top:0;">Nexus V3 Cloner</h2>
+            <input type="text" id="imgUrl" placeholder="Image URL..." style="width:100%; padding:12px; margin-bottom:10px; border-radius:8px; border:none; background:#1a1a1a; color:white;">
+            <button onclick="runClone()" style="width:100%; padding:15px; background:#63e28c; border:none; border-radius:10px; font-weight:bold; cursor:pointer;">GENERATE CODE</button>
+            <div id="out" style="display:none; margin-top:20px; background:#000; padding:15px; border-radius:10px; color:#88eeff; font-family:monospace; font-size:12px;"></div>
+        </div>
+
+        <div class="ad-slot">
+            ADVERTISEMENT
+        </div>
+
+        <script>
+            // Integration logic as discussed previously
+        </script>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('nexus_cloner', 'bz_monetized_nexus_shortcode');
